@@ -51,6 +51,7 @@ export default function Team() {
 
               {open && (
                 <div className="mt-4 pt-4 border-t border-[#E0CBA8] text-left">
+                  <p className="text-sm font-semibold text-[#4A1D5E]">Contact Me!</p>
                   <a href={`mailto:${m.email}`} className="text-sm text-[#7B3FA0] hover:underline break-all">{m.email}</a>
                   <p className="mt-3 text-sm text-[#5A4A4A] leading-relaxed">{m.bio}</p>
                 </div>
