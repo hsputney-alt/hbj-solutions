@@ -72,6 +72,17 @@ function Footer() {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <title>HB&amp;J Solutions</title>
+        <meta name="description" content="Student-led consulting that builds practical Microsoft Access and Salesforce solutions for real organizations." />
+        <meta property="og:title" content="HB&J Solutions" />
+        <meta property="og:description" content="Spreading smart solutions, one layer at a time. Student-led consulting from the University at Buffalo." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/icon.svg" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="HB&J Solutions" />
+        <meta name="twitter:description" content="Spreading smart solutions, one layer at a time." />
+      </head>
       <body className="min-h-screen flex flex-col text-[#2B1838] bg-white">
         <Nav />
         <main className="flex-1">{children}</main>
