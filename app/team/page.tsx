@@ -39,34 +39,16 @@ export default function Team() {
         {team.map((m, i) => {
           const open = openIndex === i;
           return (
-            <button
-              key={m.email}
-              onClick={() => setOpenIndex(open ? null : i)}
-              className="w-full text-left rounded-xl border border-[#E0CBA8] bg-[#FBF6EC] p-6 transition-shadow hover:shadow-md focus:outline-none focus:ring-2 focus:ring-[#7B3FA0]"
-            >
+            <button key={m.email} onClick={() => setOpenIndex(open ? null : i)} className="w-full text-left rounded-xl border border-[#E0CBA8] bg-[#FBF6EC] p-6 transition-shadow hover:shadow-md focus:outline-none focus:ring-2 focus:ring-[#7B3FA0]">
               <div className="text-center">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={m.photo} alt={m.name} className="mx-auto w-32 h-32 rounded-full object-cover border-4 border-[#E9DCF0]" />
                 <h3 className="mt-4 font-bold text-[#2B1838]">{m.name}</h3>
                 <p className="text-sm font-semibold text-[#8A5A2B]">{m.title}</p>
-                
-                  href={`mailto:${m.email}`}
-                  onClick={(e) => e.stopPropagation()}
-                  className="mt-1 inline-block text-sm text-[#7B3FA0] hover:underline break-all"
-                >
-                  {m.email}
-                </a>
+                <a href={`mailto:${m.email}`} onClick={(e) => e.stopPropagation()} className="mt-1 inline-block text-sm text-[#7B3FA0] hover:underline break-all">{m.email}</a>
               </div>
-
-              {open && (
-                <p className="mt-4 pt-4 border-t border-[#E0CBA8] text-sm text-[#5A4A4A] leading-relaxed">
-                  {m.bio}
-                </p>
-              )}
-
-              <p className="mt-4 text-center text-xs font-medium text-[#8A5A2B]">
-                {open ? "▲ Show less" : "▼ Read bio"}
-              </p>
+              {open && <p className="mt-4 pt-4 border-t border-[#E0CBA8] text-sm text-[#5A4A4A] leading-relaxed">{m.bio}</p>}
+              <p className="mt-4 text-center text-xs font-medium text-[#8A5A2B]">{open ? "▲ Show less" : "▼ Read bio"}</p>
             </button>
           );
         })}
